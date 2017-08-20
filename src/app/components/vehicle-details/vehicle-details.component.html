@@ -1,0 +1,28 @@
+<h2 class="mat-h2">We've found the vehicle with the following information</h2>
+
+<md-card class="vehicle-card">
+  <md-card-header>
+    <md-card-title>{{ vehicle.Make }}</md-card-title>
+    <md-card-subtitle>{{ vehicle.Model }}</md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+    <md-list>
+        <md-list-item> 
+          <h4 md-line>Model Year</h4>
+          <p md-line>{{ vehicle.ModelYear }}</p>
+        </md-list-item>
+      <md-list-item> 
+        <h4 md-line>Body Class</h4>
+        <p md-line>{{ vehicle.BodyClass }}</p>
+      </md-list-item>
+      <md-list-item> 
+          <h4 md-line>Body Type</h4>
+          <p md-line>{{ vehicle.NCSABodyType }}</p>
+        </md-list-item>
+      <md-list-item> 
+          <h4 md-line>Fuel Type</h4>
+          <p md-line>{{ vehicle.FuelTypePrimary }}</p>
+        </md-list-item>
+     </md-list>
+  </md-card-content>
+</md-card>
