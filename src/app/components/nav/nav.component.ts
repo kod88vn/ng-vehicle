@@ -15,7 +15,7 @@ export class NavComponent implements OnInit {
     // links equivalent to registered route paths
     this.navLinks = [
       { label: 'Vehicles', link: 'vehicles'},
-      { label: 'Makers', link: 'makers'}
+      { label: 'Makes', link: 'makes'}
     ];
   }
 

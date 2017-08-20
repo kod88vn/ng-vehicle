@@ -1,3 +1,5 @@
+/* Super awesome component to improve performance on reading an input automatically.
+Best used with autocomplete kind of action */
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
@@ -13,9 +15,9 @@ import 'rxjs/add/observable/fromEvent';
 export class InputDebounceComponent implements OnInit {
 
   public value: string;
+  public formControl;
   @Input() placeholder: string;
   @Output() onInputCompleted = new EventEmitter<string>();
-  public formControl;
 
   constructor() { }
 
