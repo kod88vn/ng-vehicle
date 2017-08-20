@@ -1,0 +1,8 @@
+<form class="input-debounce-form">
+  <md-input-container>
+    <input mdInput placeholder="{{placeholder}}" [value]="value" [formControl]="formControl">
+    <md-error *ngIf="formControl.hasError('required')">
+      <strong>required</strong>
+    </md-error>
+  </md-input-container>
+</form>

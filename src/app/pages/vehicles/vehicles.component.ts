@@ -14,15 +14,18 @@ export class VehiclesComponent implements OnInit {
   constructor(private nhtsaService: NhtsaService) { }
 
   ngOnInit() {
-    this.getVehicleInformation();
   }
 
-  getVehicleInformation() {
-    this.nhtsaService.getVehicleInformation('5YJXCAE28HF043598').subscribe(
+  // 5YJXCAE28HF043598
+  getVehicleInformation(vin) {
+    this.nhtsaService.getVehicleInformation(vin).subscribe(
       res => {
         this.vehicle = res.Results[0];
       }
     );
   }
 
+  onInputCompleted(event) {
+    this.getVehicleInformation(event);
+  }
 }
