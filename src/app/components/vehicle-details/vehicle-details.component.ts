@@ -1,5 +1,6 @@
 /* Cool component to display vehicle details */
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vehicle-details',
@@ -12,7 +13,7 @@ export class VehicleDetailsComponent implements OnInit {
 
   public vehicleProperties: any;
   
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     // Use this to populate what kind of properties to display.
@@ -70,6 +71,10 @@ export class VehicleDetailsComponent implements OnInit {
         prop: 'GVWR'
       },
     ];
+  }
+
+  showRecalls() {
+    this.router.navigate(['recalls', this.vehicle['Make'], this.vehicle['Series'], this.vehicle['ModelYear']]);
   }
 
 }

@@ -19,4 +19,14 @@ export class NhtsaService {
     );
   }
 
+  getRecalls(make, model, year): Observable<any> {
+    const url = `https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/${year}/make/${make}/model/${model}?format=json`;
+    return this.http.get(url).map(
+      res => {
+        const data = res.json();
+
+        return data;
+      }
+    );
+  }
 }
