@@ -12,7 +12,7 @@ export class RecallsComponent implements OnInit {
 
   public recalls;
   public corsWarning;
-  public recallProperties;
+  
   public make;
   public model;
   public year;
@@ -33,28 +33,5 @@ export class RecallsComponent implements OnInit {
         this.corsWarning = true;
       },
     );
-
-    this.recallProperties = [
-      { 
-        label: 'Component',
-        prop: 'Component'
-      },
-      { 
-        label: 'Conequence',
-        prop: 'Conequence'
-      },
-      { 
-        label: 'Notes',
-        prop: 'Notes'
-      },
-      { 
-        label: 'Remedy',
-        prop: 'Remedy'
-      },
-      { 
-        label: 'Summary',
-        prop: 'Summary'
-      }
-    ];
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-recall-details',
@@ -7,9 +7,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecallDetailsComponent implements OnInit {
 
+  @Input() recall: object;
+  public recallProperties;
+
   constructor() { }
 
   ngOnInit() {
+    this.recallProperties = [
+      { 
+        label: 'Component',
+        prop: 'Component'
+      },
+      { 
+        label: 'Conequence',
+        prop: 'Conequence'
+      },
+      { 
+        label: 'Notes',
+        prop: 'Notes'
+      },
+      { 
+        label: 'Remedy',
+        prop: 'Remedy'
+      },
+      { 
+        label: 'Summary',
+        prop: 'Summary'
+      }
+    ];
   }
 
 }
