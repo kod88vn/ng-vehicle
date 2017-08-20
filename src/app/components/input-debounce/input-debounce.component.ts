@@ -14,26 +14,51 @@ import 'rxjs/add/observable/fromEvent';
 })
 export class InputDebounceComponent implements OnInit {
 
-  public value: string;
+  public value: string = '';
   public formControl;
   @Input() placeholder: string;
-  @Output() onInputCompleted = new EventEmitter<string>();
+  @Input() minLength: number;
+  @Input() maxLength: number;
+  @Input() pattern: string;
+  @Output() onInputCompleted = new EventEmitter<object>();
 
   constructor() { }
 
   ngOnInit() {
-    this.value = '';
-
-    this.formControl = new FormControl('', [
-      Validators.required
-    ]);
+    let validators = this.composeValidators();
+    this.formControl = new FormControl('', validators);
   
     this.formControl.valueChanges
-    .debounceTime(1000)
+    .debounceTime(500)
     .subscribe(newValue => {
+      this.formControl.markAsTouched({onlySelf: true});
       this.value = newValue;
-      this.onInputCompleted.emit(this.value);
+      if(this.formControl.valid) {
+        this.onInputCompleted.emit({
+          valid: this.formControl.valid,
+          value: this.value
+        });
+      } else {
+        this.onInputCompleted.emit({
+          valid: this.formControl.valid,
+          value: this.value
+        });
+      }
     });
+  }
+
+  composeValidators() {
+    let validators = [Validators.required];
+    
+    if(this.minLength) {
+      validators.push(Validators.minLength(this.minLength));
+    }
+
+    if(this.maxLength) {
+      validators.push(Validators.maxLength(this.maxLength));
+    }
+
+    return validators;
   }
 
 }

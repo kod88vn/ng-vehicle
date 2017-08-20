@@ -1,2 +1,4 @@
-<app-input-debounce placeholder="VIN" (onInputCompleted)="onInputCompleted($event)"></app-input-debounce>
+<div class="clearfix">
+    <app-input-debounce placeholder="VIN" minLength="17" maxLength="17" pattern="([A-HJ-NPR-Z\d]{3})([A-HJ-NPR-Z\d]{5})([\dX])(([A-HJ-NPR-Z\d])([A-HJ-NPR-Z\d])([A-HJ-NPR-Z\d]{6}))" (onInputCompleted)="onInputCompleted($event)"></app-input-debounce>
+</div>
 <app-vehicle-details [vehicle]="vehicle" *ngIf="vehicle"></app-vehicle-details>

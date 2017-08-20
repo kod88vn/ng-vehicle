@@ -26,6 +26,10 @@ export class VehiclesComponent implements OnInit {
   }
 
   onInputCompleted(event) {
-    this.getVehicleInformation(event);
+    if(event.valid) {
+      this.getVehicleInformation(event.value);
+    } else {
+      this.vehicle = null;
+    }
   }
 }
