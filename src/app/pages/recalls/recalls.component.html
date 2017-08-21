@@ -8,14 +8,4 @@
 
 <md-card *ngFor="let recall of recalls" class="recalls-card">
   <app-recall-details [recall]="recall"></app-recall-details>
-  <!-- <md-card-header class="pull-right">
-    <md-card-title>Campaign #</md-card-title>
-    <md-card-subtitle>{{ recall.NHTSACampaignNumber }}</md-card-subtitle>
-  </md-card-header>
-  <md-card-content>
-      <div *ngFor="let p of recallProperties"> 
-        <h4>{{p.label}}</h4>
-        <p>{{ recall[p.prop] || "Not Applicable" }}</p>
-      </div>
-  </md-card-content> -->
 </md-card>
