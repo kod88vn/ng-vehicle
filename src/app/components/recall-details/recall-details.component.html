@@ -3,8 +3,8 @@
   <md-card-subtitle>{{ recall.NHTSACampaignNumber }}</md-card-subtitle>
 </md-card-header>
 <md-card-content>
-    <div *ngFor="let p of recallProperties"> 
-      <h4>{{p.label}}</h4>
-      <p>{{ recall[p.prop] || "Not Applicable" }}</p>
-    </div>
+  <div *ngFor="let p of recallProperties"> 
+    <h4>{{p.label}}</h4>
+    <p>{{ recall[p.prop] || "Not Applicable" }}</p>
+  </div>
 </md-card-content>

@@ -1,3 +1,6 @@
+<md-error *ngIf="!vehicles.length">
+  <div>Sorry, we could not find any information matching your selections</div>
+</md-error>
 <table class="table table-sm" cellspacing="0" *ngIf="vehicles.length">
   <tr>
     <th *ngFor="let p of vfProperties">
