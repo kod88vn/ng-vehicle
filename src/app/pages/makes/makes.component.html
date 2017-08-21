@@ -13,4 +13,7 @@
 </table>
 <div class="clearfix"></div>
 <app-spinner *ngIf="isLoading"></app-spinner>
+<md-error *ngIf="notFound">
+  <div>Sorry, we could not find any information matching your selections</div>
+</md-error>
 <app-vehicle-fuel-details [vehicles]="vehicles"></app-vehicle-fuel-details>

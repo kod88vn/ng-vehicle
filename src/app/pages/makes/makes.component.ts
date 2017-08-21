@@ -13,6 +13,7 @@ import 'rxjs/add/operator/map';
   providers: [NhtsaService]
 })
 export class MakesComponent implements OnInit {
+  notFound: boolean;
   isLoading: boolean;
   vehicles: any = [];
   models: any = [];
@@ -93,6 +94,10 @@ export class MakesComponent implements OnInit {
         this.vehicles = [];
         this.vehicles = this.vehicles.concat(res);
         this.isLoading = false;
+
+        if (!this.vehicles.length) {
+          this.notFound = true;
+        }
       }
     );
   }
