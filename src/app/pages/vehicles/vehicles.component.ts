@@ -8,6 +8,7 @@ import { NhtsaService } from '../../services/nhtsa/nhtsa.service';
   providers: [NhtsaService]
 })
 export class VehiclesComponent implements OnInit {
+  isLoading: boolean;
 
   public vehicle: object;
 
@@ -18,9 +19,11 @@ export class VehiclesComponent implements OnInit {
 
   // WDDHF5KB6EA877516
   getVehicleInformation(vin) {
+    this.isLoading = true;
     this.nhtsaService.getVehicleInformation(vin).subscribe(
       res => {
         this.vehicle = res.Results[0];
+        this.isLoading = false;
       }
     );
   }

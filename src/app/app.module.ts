@@ -19,6 +19,7 @@ import { AutocompleteComponent } from './components/autocomplete/autocomplete.co
 import { RecallsComponent } from './pages/recalls/recalls.component';
 import { VehicleFuelDetailsComponent } from './components/vehicle-fuel-details/vehicle-fuel-details.component';
 import { PageComponent } from './components/page/page.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { PageComponent } from './components/page/page.component';
     RecallsComponent,
     AutocompleteComponent,
     VehicleFuelDetailsComponent,
-    PageComponent
+    PageComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

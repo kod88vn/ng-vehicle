@@ -13,6 +13,7 @@ import 'rxjs/add/operator/map';
   providers: [NhtsaService]
 })
 export class MakesComponent implements OnInit {
+  isLoading: boolean;
   vehicles: any = [];
   models: any = [];
   makes: any = [];
@@ -47,10 +48,12 @@ export class MakesComponent implements OnInit {
   }
 
   getMakes() {
+    this.isLoading = true;
     this.nhtsaService.getMakes().subscribe(
       res => {
         this.makes = [];
         this.makes = res.Results.map(m => m.Make_Name);
+        this.isLoading = false;
       }
     );
   }
@@ -84,10 +87,12 @@ export class MakesComponent implements OnInit {
   }
 
   getFuelConsumption() {
+    this.isLoading = true;
     this.nhtsaService.getFuelConsumption(this.make, this.model).subscribe(
       res => {
         this.vehicles = [];
         this.vehicles = this.vehicles.concat(res);
+        this.isLoading = false;
       }
     );
   }
