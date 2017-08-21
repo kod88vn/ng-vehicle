@@ -97,6 +97,8 @@ export class MakesComponent implements OnInit {
 
         if (!this.vehicles.length) {
           this.notFound = true;
+        } else {
+          this.notFound = false;
         }
       }
     );
