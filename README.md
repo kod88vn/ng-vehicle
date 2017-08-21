@@ -1,6 +1,10 @@
 # NgVehicle
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.1.
+## Summary
+
+Let you explore your car's information based on VIN or Make information from public api.
+From Vehicles tab, you can also explore recall's information and fuel rating by providing its VIN.
+From Makes tab, you can view Make's models and explore their fuel rating. Note that fuel rating is not available for all models.
 
 ## Development server
 
