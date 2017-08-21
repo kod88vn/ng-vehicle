@@ -26,23 +26,11 @@ export class AutocompleteComponent implements OnInit {
   }
 
   filterOptions(val: string) {
-    // if (!val && this.options && this.options.length > 10000) {
-    //   return false;
-    // }
-
     return val ? this.options.filter(s => s.toString().toUpperCase().indexOf(val.toString().toUpperCase()) === 0)
                : this.options;
   }
 
   ngOnInit() {
-    // this.formControl.valueChanges
-    // .debounceTime(500)
-    // .subscribe(newValue => {
-    //   this.formControl.markAsTouched({onlySelf: true});
-    //   if (this.formControl.valid) {
-    //     this.onSelected.emit(newValue);
-    //   }
-    // });
   }
 
   onClick(text) {
