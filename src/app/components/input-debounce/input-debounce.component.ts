@@ -14,7 +14,7 @@ import 'rxjs/add/observable/fromEvent';
 })
 export class InputDebounceComponent implements OnInit {
 
-  public value: string = '';
+  public value = '';
   public formControl;
   @Input() placeholder: string;
   @Input() minLength: number;
@@ -25,15 +25,15 @@ export class InputDebounceComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    let validators = this.composeValidators();
+    const validators = this.composeValidators();
     this.formControl = new FormControl('', validators);
-  
+
     this.formControl.valueChanges
     .debounceTime(500)
     .subscribe(newValue => {
       this.formControl.markAsTouched({onlySelf: true});
       this.value = newValue;
-      if(this.formControl.valid) {
+      if (this.formControl.valid) {
         this.onInputCompleted.emit({
           valid: this.formControl.valid,
           value: this.value
@@ -48,13 +48,13 @@ export class InputDebounceComponent implements OnInit {
   }
 
   composeValidators() {
-    let validators = [Validators.required];
-    
-    if(this.minLength) {
+    const validators = [Validators.required];
+
+    if (this.minLength) {
       validators.push(Validators.minLength(this.minLength));
     }
 
-    if(this.maxLength) {
+    if (this.maxLength) {
       validators.push(Validators.maxLength(this.maxLength));
     }
 

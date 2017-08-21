@@ -14,23 +14,23 @@ export class RecallDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.recallProperties = [
-      { 
+      {
         label: 'Component',
         prop: 'Component'
       },
-      { 
+      {
         label: 'Conequence',
         prop: 'Conequence'
       },
-      { 
+      {
         label: 'Notes',
         prop: 'Notes'
       },
-      { 
+      {
         label: 'Remedy',
         prop: 'Remedy'
       },
-      { 
+      {
         label: 'Summary',
         prop: 'Summary'
       }

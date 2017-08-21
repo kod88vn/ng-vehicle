@@ -16,7 +16,7 @@ export class VehiclesComponent implements OnInit {
   ngOnInit() {
   }
 
-  // 5YJXCAE28HF043598, WDDHF5KB6EA877516
+  // WDDHF5KB6EA877516
   getVehicleInformation(vin) {
     this.nhtsaService.getVehicleInformation(vin).subscribe(
       res => {
@@ -26,7 +26,7 @@ export class VehiclesComponent implements OnInit {
   }
 
   onInputCompleted(event) {
-    if(event.valid) {
+    if (event.valid) {
       this.getVehicleInformation(event.value);
     } else {
       this.vehicle = null;

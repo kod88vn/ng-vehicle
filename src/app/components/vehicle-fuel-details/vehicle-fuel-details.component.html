@@ -1,0 +1,12 @@
+<table class="table table-sm" cellspacing="0" *ngIf="vehicles.length">
+  <tr>
+    <th *ngFor="let p of vfProperties">
+      {{ p.label }}
+    </th>
+  </tr>
+  <tr *ngFor="let v of vehicles">
+    <td *ngFor="let p of vfProperties">
+      {{ v[p.prop] || "Not Applicable" }}
+    </td>
+  </tr>
+</table>

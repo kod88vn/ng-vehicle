@@ -1,3 +1,15 @@
-<p>
-  makes works!
-</p>
+<table class="pull-right" cellspacing="0">
+  <tr>
+    <td td *ngIf="makes.length || make">
+       <app-autocomplete [value]="year" placeholder="Year" [options]="years" (onSelected)="onYearSelected($event)"></app-autocomplete>
+    </td>
+    <td *ngIf="makes.length || make">
+      <app-autocomplete [value]="make" placeholder="Make" [options]="makes" (onSelected)="onMakeSelected($event)"></app-autocomplete>
+    </td>
+    <td *ngIf="models.length || model">
+      <app-autocomplete [value]="model" placeholder="Model" [options]="models" (onSelected)="onModelSelected($event)"></app-autocomplete>
+    </td>
+  </tr>
+</table>
+<div class="clearfix"></div>
+<app-vehicle-fuel-details [vehicles]="vehicles"></app-vehicle-fuel-details>

@@ -1,0 +1,13 @@
+<md-input-container class="make-full-width">
+  <input required mdInput [(ngModel)]="value" [placeholder]="placeholder" [mdAutocomplete]="auto" [formControl]="formControl" >
+  <md-autocomplete #auto="mdAutocomplete">
+    <md-option *ngFor="let text of filteredOptions | async" [value]="text" (click)="onClick(text)">
+      {{ text }}
+    </md-option>
+  </md-autocomplete>
+  <div *ngIf="formControl.invalid && (formControl.dirty || formControl.touched)">
+    <md-error *ngIf="formControl.errors.required">
+      <strong>Required</strong>
+    </md-error>
+  </div>
+</md-input-container>

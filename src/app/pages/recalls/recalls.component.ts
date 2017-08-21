@@ -12,7 +12,6 @@ export class RecallsComponent implements OnInit {
 
   public recalls;
   public corsWarning;
-  
   public make;
   public model;
   public year;
@@ -27,7 +26,6 @@ export class RecallsComponent implements OnInit {
     this.nhtsaService.getRecalls(this.make, this.model, this.year).subscribe(
       res => {
         this.recalls = res.Results;
-        console.log(this.recalls);
       },
       err => {
         this.corsWarning = true;

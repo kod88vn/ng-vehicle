@@ -15,7 +15,10 @@ import { MakesComponent } from './pages/makes/makes.component';
 import { VehicleDetailsComponent } from './components/vehicle-details/vehicle-details.component';
 import { InputDebounceComponent } from './components/input-debounce/input-debounce.component';
 import { RecallDetailsComponent } from './components/recall-details/recall-details.component';
+import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
 import { RecallsComponent } from './pages/recalls/recalls.component';
+import { VehicleFuelDetailsComponent } from './components/vehicle-fuel-details/vehicle-fuel-details.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { RecallsComponent } from './pages/recalls/recalls.component';
     VehicleDetailsComponent,
     InputDebounceComponent,
     RecallDetailsComponent,
-    RecallsComponent
+    RecallsComponent,
+    AutocompleteComponent,
+    VehicleFuelDetailsComponent
   ],
   imports: [
     BrowserModule,
