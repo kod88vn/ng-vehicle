@@ -18,6 +18,7 @@ import { RecallDetailsComponent } from './components/recall-details/recall-detai
 import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
 import { RecallsComponent } from './pages/recalls/recalls.component';
 import { VehicleFuelDetailsComponent } from './components/vehicle-fuel-details/vehicle-fuel-details.component';
+import { PageComponent } from './components/page/page.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { VehicleFuelDetailsComponent } from './components/vehicle-fuel-details/v
     RecallDetailsComponent,
     RecallsComponent,
     AutocompleteComponent,
-    VehicleFuelDetailsComponent
+    VehicleFuelDetailsComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,

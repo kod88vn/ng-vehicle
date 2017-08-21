@@ -1,10 +1,11 @@
 <form class="input-debounce-form">
   <md-input-container>
     <input mdInput 
-    placeholder="{{placeholder}}" 
-    [value]="value" 
-    [pattern]="pattern"
-    [formControl]="formControl">
+      required
+      placeholder="{{placeholder}}" 
+      [value]="value" 
+      [pattern]="pattern"
+      [formControl]="formControl">
     <div *ngIf="formControl.invalid && (formControl.dirty || formControl.touched)">
       <md-error *ngIf="formControl.errors.required">
         <strong>Required</strong>
