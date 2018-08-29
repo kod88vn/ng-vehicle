@@ -1,9 +1,9 @@
 <form class="input-debounce-form">
   <md-input-container>
-    <input mdInput 
+    <input mdInput
       required
-      placeholder="{{placeholder}}" 
-      [value]="value" 
+      placeholder="{{placeholder}}"
+      [value]="value"
       [pattern]="pattern"
       [formControl]="formControl">
     <div *ngIf="formControl.invalid && (formControl.dirty || formControl.touched)">
@@ -11,10 +11,10 @@
         <strong>Required</strong>
       </md-error>
       <md-error *ngIf="formControl.errors.minlength">
-        <strong>Minimal length is {{ formControl.errors.minlength.requiredLength }}. Atual is {{ formControl.errors.minlength.actualLength }}</strong>
+        <strong>Minimal length is {{ formControl.errors.minlength.requiredLength }}. Actual is {{ formControl.errors.minlength.actualLength }}</strong>
       </md-error>
       <md-error *ngIf="formControl.errors.maxlength">
-        <strong>Maximum length is {{ formControl.errors.maxlength.requiredLength }}. Atual is {{ formControl.errors.maxlength.actualLength }}</strong>
+        <strong>Maximum length is {{ formControl.errors.maxlength.requiredLength }}. Actual is {{ formControl.errors.maxlength.actualLength }}</strong>
       </md-error>
       <md-error *ngIf="formControl.errors.pattern">
         <strong>Invalid Pattern</strong>
